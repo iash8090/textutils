@@ -21,6 +21,7 @@ export default function TextForm(props) {
     const handleExtraSpace = () => {
         let newtext = text.split(/[ ]+/);
         setText(newtext.join(" "));
+        props.showAlert("Extra Spaces Removed", "success")
     };
 
     const changeToUpper = () => {
@@ -37,13 +38,7 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className={`form-check form-switch mx-2 text-${props.mode === "light" ? "dark" : "light"}`} style={{ float: "right" }}>
-                <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-                    {" "}
-                    <b>Dark Mode</b>
-                </label>
-            </div>
+
             <div className="container my-3 mb-3 mt-1">
                 <h1 className={`text-${props.mode === "light" ? "dark" : "light"}`}> {props.heading} </h1>
                 <textarea
@@ -84,7 +79,7 @@ export default function TextForm(props) {
                 <h3 className={`text-${props.mode === "light" ? "dark" : "light"}`}>Text summary</h3>
                 <p style={{ color: "yellow" }}>
                     {/* {text.split(" ").length} words and {text.length} characters */}
-                    {text.length < 1 ? 0 : text.split(" ").length} words and {text.length} characters
+                    {text.length< 1 ? 0 : text.split(" ").length} words and {text.length} characters
                 </p>
             </div>
         </>
