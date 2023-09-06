@@ -16,3 +16,6 @@ First install dependencies.
 Start Project
 
 > npm start
+
+### Website Preview
+![plot](./Website_preview.png)
